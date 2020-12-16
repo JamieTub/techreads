@@ -1,1 +1,11 @@
 <p>search-functions works!</p>
+
+<form (ngSubmit)="searchForAuthor()" [formGroup]="authorSearch">
+
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="bookAuthor" placeholder="Author Name" autocomplete="off">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
