@@ -5,15 +5,15 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-search-functions',
-  templateUrl: './search-functions.component.html',
-  styleUrls: ['./search-functions.component.css']
+  selector: 'app-title-search',
+  templateUrl: './title-search.component.html',
+  styleUrls: ['./title-search.component.css']
 })
-export class SearchFunctionsComponent implements OnInit {
+export class TitleSearchComponent implements OnInit {
   title = "Techreads Author Search";
   books: any;
-  authorSearch: any;
-  authResult: any;
+  titleSearch: any;
+  titResult: any;
 
   constructor(private http: HttpClient, private HttpClientModule: HttpClientModule,
     private router: Router) { }
@@ -32,17 +32,17 @@ export class SearchFunctionsComponent implements OnInit {
   }
 
   initForm() {
-    this.authorSearch = new FormGroup({
-      bookAuthor: new FormControl()
+    this.titleSearch = new FormGroup({
+      bookTitle: new FormControl()
     })
   }
 
-  searchForAuthor() {
-    console.log(this.authorSearch.value.bookAuthor);
-    this.http.get<any>(environment.apiUrl + '/authors/'
-      + this.authorSearch.value.bookAuthor).subscribe(response => {
-        this.authResult = response;
-        console.log(this.authResult)
+  searchForTitle() {
+    console.log(this.titleSearch.value.bookTitle);
+    this.http.get<any>(environment.apiUrl + '/search/'
+      + this.titleSearch.value.bookTitle).subscribe(response => {
+        this.titResult = response;
+        console.log(this.titResult)
       }, error => {
         console.log(error);
       })

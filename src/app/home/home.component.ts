@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   getBooks() {
-    this.http.get<any>('http://localhost:3000/books').subscribe(response => {
+    this.http.get<any>(environment.apiUrl).subscribe(response => {
       this.books = response;
     }, error => {
       console.log(error);

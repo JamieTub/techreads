@@ -1,0 +1,48 @@
+<div class="card mb-3">
+  <h3 class="card-header">{{detailedBook.title}}</h3>
+  <div class="card-body">
+    <a [routerLink]="['/']">Go back home</a>
+    <h5 class="card-title">{{detailedBook.authors}}</h5>
+    <h6 class="card-subtitle text-muted">{{detailedBook.description}}</h6>
+  </div>
+  <img src="{{detailedBook.bookCoverArt}}" class="img-fluid" alt="Responsive image">
+  <div class="card-body">
+    <p class="card-text">Year Published: {{detailedBook.year}}, ISBN: {{detailedBook.isbn}}
+    </p>
+  </div>
+  <div class="card-body">
+    <a href="#" class="card-link">I've Read This</a>
+  </div>
+</div>
+<div class="card">
+  
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
+        <h4 class="font-cond-l fg-accent lts-md mgb-10" contenteditable="false">Not Yet Convinced?</h4>
+        <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Read Customer Reviews
+        </h1>
+      </div>
+      <div>
+      </div>
+      <ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
+        <div>
+          <li *ngFor="let rev of detailedBook.reviews">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="wpx-100 img-round mgb-20" title=""
+              alt="" data-edit="false" data-editor="field"
+              data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+            <p class="fs-110 font-cond-l" contenteditable="false">{{rev.review}}</p>
+            <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">{{rev.reviewer}}</h5>
+          </li>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <a href="#" class="card-link">Submit Review</a>
+  </div>
+</div>

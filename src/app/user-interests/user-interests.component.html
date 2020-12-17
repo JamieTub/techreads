@@ -1,0 +1,25 @@
+<h3>
+  User
+  <small class="text-muted">interests</small>
+</h3>
+
+<form [formGroup]="interestSelect" (ngSubmit)="submitInterest()">
+  <select formControlName="intSelect">
+    <option disabled>Category Name</option>
+    <option *ngFor="let int of bookCategories" name="interest" [(ngModel)]="interestSelect.interest">{{int}}</option>
+  </select>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Interests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info" *ngFor="let interest of userInterests">{{interest.topic}}
+      <td></td>
+    </tr>
+  </tbody>
+</table>

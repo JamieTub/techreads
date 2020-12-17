@@ -10,7 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthorSearchResultsComponent } from './author-search-results/author-search-results.component';
+import { CategorySearchComponent } from './category-search/category-search.component';
+import { TitleSearchComponent } from './title-search/title-search.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { ReadingHistoryComponent } from './reading-history/reading-history.component';
+import { UserInterestsComponent } from './user-interests/user-interests.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { AuthorSearchResultsComponent } from './author-search-results/author-sea
     SearchFunctionsComponent,
     HomeComponent,
     NavBarComponent,
-    AuthorSearchResultsComponent
+    CategorySearchComponent,
+    TitleSearchComponent,
+    BookDetailsComponent,
+    ReadingHistoryComponent,
+    UserInterestsComponent,
   ],
   imports: [
     BrowserModule,

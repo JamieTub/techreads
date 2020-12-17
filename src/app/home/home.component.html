@@ -1,4 +1,19 @@
-<ul>
-  <li *ngFor="let book of books">{{book.id}} - {{book.title}} </li>
-
-</ul>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Book Title</th>
+      <th scope="col">Author(s)</th>
+      <th scope="col">Year Published</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info" *ngFor="let book of books">{{book.title}}
+      <th scope="row">{{book.authors}}</th>
+      <td>{{book.year}}</td>
+      <td>{{book.category}}</td>
+      <td><button type="submit" class="btn btn-primary" routerLink="/book-details/{{book.id}}"></button></td>
+    </tr>
+  </tbody>
+</table>

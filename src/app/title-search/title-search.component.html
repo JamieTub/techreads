@@ -1,9 +1,9 @@
-<p>search-functions works!</p>
+<p>title-search works!</p>
 
-<form (ngSubmit)="searchForAuthor()" [formGroup]="authorSearch">
+<form (ngSubmit)="searchForTitle()" [formGroup]="titleSearch">
 
   <div class="form-group">
-    <input type="text" class="form-control" [formGroup]='authorSearch' formControlName="bookAuthor"
+    <input type="text" class="form-control" [formGroup]='titleSearch' formControlName="bookTitle"
       placeholder="Author Name" autocomplete="off">
   </div>
   <button type="submit" class="btn btn-primary">Search Author</button>
@@ -20,11 +20,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="table-primary" *ngFor="let authRes of authResult">
-      <th scope="row">{{authRes.title}}</th>
-      <td>{{authRes.authors}}</td>
-      <td>{{authRes.year}}</td>
-      <td>{{authRes.category}}</td>
+    <tr class="table-primary" *ngFor="let titRes of titResult">
+      <th scope="row">{{titRes.title}}</th>
+      <td>{{titRes.authors}}</td>
+      <td>{{titRes.year}}</td>
+      <td>{{titRes.category}}</td>
     </tr>
   </tbody>
 

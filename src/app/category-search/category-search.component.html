@@ -1,0 +1,30 @@
+<p>category-search works!</p>
+
+<form (ngSubmit)="searchForCategory()" [formGroup]="categorySearch">
+
+  <div class="form-group">
+    <input type="text" class="form-control" [formGroup]='categorySearch' formControlName="bookCategory"
+      placeholder="Book Category" autocomplete="off">
+  </div>
+  <button type="submit" class="btn btn-primary">Search Category</button>
+</form>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Book Title</th>
+      <th scope="col">Author(s)</th>
+      <th scope="col">Year Published</th>
+      <th scope="col">Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-primary" *ngFor="let catRes of catResult">
+      <th scope="row">{{catRes.title}}</th>
+      <td>{{catRes.authors}}</td>
+      <td>{{catRes.year}}</td>
+      <td>{{catRes.category}}</td>
+    </tr>
+  </tbody>
+
+</table>
