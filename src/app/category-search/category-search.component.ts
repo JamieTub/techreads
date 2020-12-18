@@ -15,8 +15,7 @@ export class CategorySearchComponent implements OnInit {
   categorySearch: any;
   catResult: any;
 
-  constructor(private http: HttpClient, private HttpClientModule: HttpClientModule,
-    private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getBooks();

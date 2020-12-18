@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./reading-history.component.css']
 })
 export class ReadingHistoryComponent implements OnInit {
-  user: any;
   vanillaUrl = "http://localhost:3000/";
   readingHistory: any[] = [];
   books: any[] = [];
@@ -31,7 +30,6 @@ export class ReadingHistoryComponent implements OnInit {
               let matchingBook: any = book;
               matchingBook.date = e.date;
               this.readingHistory.push(matchingBook);
-              console.log(this.readingHistory)
             })
         })
       })

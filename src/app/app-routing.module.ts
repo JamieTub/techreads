@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { BookRecommendationsComponent } from './book-recommendations/book-recommendations.component';
 import { CategorySearchComponent } from './category-search/category-search.component';
 import { HomeComponent } from './home/home.component';
 import { ReadingHistoryComponent } from './reading-history/reading-history.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'book-details/:id', component: BookDetailsComponent },
   { path: 'user-interests/:user', component: UserInterestsComponent },
   { path: 'reading-history/:user', component: ReadingHistoryComponent },
+  { path: 'book-recommendations', component: BookRecommendationsComponent },
   { path: '**', component: HomeComponent, pathMatch: 'full' }
 ];
 

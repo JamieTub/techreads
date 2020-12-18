@@ -44,8 +44,11 @@
       </ul>
     </div>
   </div>
-
-  <div>
-    <a href="#" class="card-link">Submit Review</a>
+<form (ngSubmit)="submitReview()" [formGroup]="updateReview">
+  <div class="form-group">
+    <input type="text" class="form-control" [formGroup]='updateReview' formControlName="reviewUpdate"
+      placeholder="Book Review" autocomplete="off">
   </div>
+  <button type="submit" class="btn btn-primary">Search Category</button>
+</form>
 </div>

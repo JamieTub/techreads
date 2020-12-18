@@ -1,7 +1,6 @@
 <p>category-search works!</p>
 
 <form (ngSubmit)="searchForCategory()" [formGroup]="categorySearch">
-
   <div class="form-group">
     <input type="text" class="form-control" [formGroup]='categorySearch' formControlName="bookCategory"
       placeholder="Book Category" autocomplete="off">
