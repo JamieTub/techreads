@@ -3,12 +3,12 @@
   <small class="text-muted">interests</small>
 </h3>
 
-<form [formGroup]="interestSelect" (ngSubmit)="submitInterest()">
-  <select formControlName="intSelect">
+<form class="form-inline">
+  <select [(ngModel)]="selectedOption" name="selectedOption">
     <option disabled>Category Name</option>
-    <option *ngFor="let int of bookCategories" name="interest" [(ngModel)]="interestSelect.interest">{{int}}</option>
+    <option *ngFor="let int of bookCategories">{{int}}</option>
   </select>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button (click)="submitInterest()" class="btn btn-primary">Submit</button>
 </form>
 
 <table class="table table-hover">

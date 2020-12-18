@@ -15,7 +15,9 @@ export class UserInterestsComponent implements OnInit {
   userInterests: any;
   vanillaUrl = "http://localhost:3000/";
   bookCategories: any;
-  interestSelect: any = {};
+  interestSelect: any;
+  selectedOption: any;
+  printedOption: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
@@ -51,9 +53,9 @@ export class UserInterestsComponent implements OnInit {
   }
 
   submitInterest() {
-    console.log(this.interestSelect.topic)
+    this.printedOption = this.selectedOption;
+    console.log(this.printedOption)
     this.http.post(this.vanillaUrl + "interests",
-      { 'user': 'anon', 'topic': this.interestSelect.topic}).subscribe();
+      { 'user': 'anon', 'topic': this.selectedOption }).subscribe();
   }
-
 }
