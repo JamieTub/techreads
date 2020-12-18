@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
@@ -12,12 +13,29 @@ export class BookDetailsComponent implements OnInit {
   book: any;
   detailedBook: any;
   user: any;
+  vanillaUrl = "http://localhost:3000/";
+  updateHistory: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
+    this.initForm();
     this.loadBookDetail();
-    this.user();
+  }
+
+  initForm() {
+    this.updateHistory = new FormGroup({
+      historyUpdate: new FormControl()
+    })
+  }
+
+  addBookToHistory() {
+    var jsonDate = (new Date()).toJSON();
+    console.log(jsonDate)
+    let id = this.route.snapshot.paramMap.get('id')
+    console.log(id)
+     this.http.post(this.vanillaUrl + "history",
+       { 'user': 'anon', 'book': id, 'date': jsonDate }).subscribe();
   }
 
   loadBookDetail() {
@@ -28,5 +46,5 @@ export class BookDetailsComponent implements OnInit {
     }, error => {
       console.log(error);
     })
-}
+  }
 }

@@ -19,12 +19,12 @@ export class UserInterestsComponent implements OnInit {
   selectedOption: any;
   printedOption: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.initInterestsForm();
-    this.callInterests();
     this.getCategories();
+    this.callInterests();
   }
 
   initInterestsForm() {

@@ -3,7 +3,8 @@
 <form (ngSubmit)="searchForAuthor()" [formGroup]="authorSearch">
 
   <div class="form-group">
-    <input type="text" class="form-control" [formGroup]='authorSearch' formControlName="bookAuthor"
+    <input type="text" class="form-control" [formGroup]='authorSearch'
+     formControlName="bookAuthor"
       placeholder="Author Name" autocomplete="off">
   </div>
   <button type="submit" class="btn btn-primary">Search Author</button>

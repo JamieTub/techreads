@@ -10,8 +10,11 @@
     <p class="card-text">Year Published: {{detailedBook.year}}, ISBN: {{detailedBook.isbn}}
     </p>
   </div>
-  <div class="card-body">
-    <a href="#" class="card-link">I've Read This</a>
+  <div class="form-control">
+    <form (ngSubmit)="addBookToHistory()" [formGroup]='updateHistory'
+     formControlName="historyUpdate">
+      <button type="submit" class="btn btn-primary">I've Read This</button>
+    </form>
   </div>
 </div>
 <div class="card">

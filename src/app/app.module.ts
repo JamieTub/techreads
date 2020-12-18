@@ -15,6 +15,7 @@ import { TitleSearchComponent } from './title-search/title-search.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { ReadingHistoryComponent } from './reading-history/reading-history.component';
 import { UserInterestsComponent } from './user-interests/user-interests.component';
+import { BookRecommendationsComponent } from './book-recommendations/book-recommendations.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UserInterestsComponent } from './user-interests/user-interests.componen
     BookDetailsComponent,
     ReadingHistoryComponent,
     UserInterestsComponent,
+    BookRecommendationsComponent,
   ],
   imports: [
     BrowserModule,
