@@ -18,7 +18,9 @@ export class BookDetailsComponent implements OnInit {
   updateReview: any;
   newReview: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) { 
+    
+  }
 
   ngOnInit() {
     this.initHistoryForm();
