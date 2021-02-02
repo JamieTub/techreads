@@ -57,5 +57,6 @@ export class UserInterestsComponent implements OnInit {
     console.log(this.printedOption)
     this.http.post(this.vanillaUrl + "interests",
       { 'user': 'anon', 'topic': this.selectedOption }).subscribe();
+      this.ngOnInit();
   }
 }

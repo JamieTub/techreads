@@ -17,7 +17,9 @@ export class BookDetailsComponent implements OnInit {
   updateHistory: any;
   updateReview: any;
   newReview: any;
-
+  ratings: any[] = [];
+  ratingP: any[] = [0,0,0,0,0];
+  meanRating = 0;
   constructor(private route: ActivatedRoute, private http: HttpClient) { 
     
   }
@@ -53,6 +55,8 @@ export class BookDetailsComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id')
     this.http.get<any>(environment.apiUrl + "/" + id).subscribe(response => {
       this.detailedBook = response;
+      this.getIndivRating();
+      this.meanRating = this.calcMean();
       console.log(this.detailedBook)
     }, error => {
       console.log(error);
@@ -66,5 +70,30 @@ export class BookDetailsComponent implements OnInit {
       'reviewer': 'anon', 'review': this.updateReview.value.reviewUpdate
     }).subscribe();
     this.ngOnInit();
+  }
+
+  getIndivRating() {
+    for (var n = 1; n < 6; ++n) {
+      var count = 0;
+      for (var i = 0; i < this.detailedBook.ratings.length; ++i) {
+        if (parseInt(this.detailedBook.ratings[i]) == n)
+          count = count + 1;
+      }
+      this.ratings.push(count);
+      this.getRatingsPercentage(count, n);
+    }
+  }
+
+  getRatingsPercentage(count: number, position: number) {
+    var percent = (count / this.detailedBook.ratings.length) * 100;
+    this.ratingP[position - 1] = percent;
+  }
+
+  calcMean(): number {
+    var currSum = 0;
+    for (var c = 0; c < this.detailedBook.ratings.length; ++c) {
+      currSum = currSum + parseInt(this.detailedBook.ratings[c]);
+    }
+    return Math.round(currSum / this.detailedBook.ratings.length);
   }
 }

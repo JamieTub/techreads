@@ -1,1 +1,21 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Book Title</th>
+      <th scope="col">Author(s)</th>
+      <th scope="col">Year Published</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info" *ngFor="let rec of simBooks">{{rec.title}}
+      <th scope="row">{{rec.authors}}</th>
+      <td>{{rec.year}}</td>
+      <td>{{rec.category}}</td>
+      <td><button type="submit" class="btn btn-primary" routerLink="/book-details/{{rec.id}}">More Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
